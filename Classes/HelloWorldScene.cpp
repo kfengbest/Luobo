@@ -31,58 +31,33 @@ bool HelloWorld::init()
     Point origin = Director::getInstance()->getVisibleOrigin();
 
     /////////////////////////////
-    // 2. add a menu item with "X" image, which is clicked to quit the program
-    //    you may modify it.
-
-    // add a "close" icon to exit the progress. it's an autorelease object
-    MenuItemImage *closeItem = MenuItemImage::create(
-                                        "CloseNormal.png",
-                                        "CloseSelected.png",
-                                        CC_CALLBACK_1(HelloWorld::menuCloseCallback, this));
-    
-	closeItem->setPosition(Point(origin.x + visibleSize.width - closeItem->getContentSize().width/2 ,
-                                origin.y + closeItem->getContentSize().height/2));
-
-    // create menu, it's an autorelease object
-    Menu* menu = Menu::create(closeItem, NULL);
-    menu->setPosition(Point::ZERO);
-    this->addChild(menu, 1);
-
-    /////////////////////////////
     // 3. add your codes below...
 
-    // add a label shows "Hello World"
-    // create and initialize a label
     
-    LabelTTF* label = LabelTTF::create("Hello Luobo", "Arial", 24);
-    
-    // position the label on the center of the screen
-    label->setPosition(Point(origin.x + visibleSize.width/2,
-                            origin.y + visibleSize.height - label->getContentSize().height));
-
-    // add the label as a child to this layer
-    this->addChild(label, 1);
-
-    // add "HelloWorld" splash screen"
-    Sprite* sprite = Sprite::create("HelloWorld.png");
-
-    // position the sprite on the center of the screen
-    sprite->setPosition(Point(visibleSize.width/2 + origin.x, visibleSize.height/2 + origin.y));
-
-    // add the sprite as a child to this layer
-    //this->addChild(sprite, 0);
-    
-    Sprite *pBackground = Sprite::create("FishRes/bj01.jpg");
-    Size sz = Director::getInstance()->getWinSize();
-    pBackground->setPosition(Point(sz.width/2, sz.height/2));
-    this->addChild(pBackground);
-
-    
+//    Sprite *pBackground = Sprite::create("FishRes/bj01.jpg");
+//    Size sz = Director::getInstance()->getWinSize();
+//    pBackground->setPosition(Point(sz.width/2, sz.height/2));
+//    this->addChild(pBackground);
 
     CCTexture2D::PVRImagesHavePremultipliedAlpha(true);
 
-    CCSpriteFrameCache::sharedSpriteFrameCache()->addSpriteFramesWithFile("antiboss1-hd.plist");
+    // Load the Background
+    SpriteFrameCache::getInstance()->addSpriteFramesWithFile("Themes/Theme1/BG0/BG1-hd.plist", "Themes/Theme1/BG0/BG1-hd.pvr.ccz");
+    // Create a sprite from the atlas
+    Sprite *bg0 = Sprite::createWithSpriteFrameName("BG1.png");
+    Size sz = Director::getInstance()->getWinSize();
+    bg0->setPosition(Point(sz.width/2, sz.height/2));
+    this->addChild(bg0);
+    
+    // Load the Background
+    SpriteFrameCache::getInstance()->addSpriteFramesWithFile("Themes/Theme1/BG1/BG-hd.plist", "Themes/Theme1/BG1/BG-hd.pvr.ccz");
+    // Create a sprite from the atlas
+    Sprite *bg1 = Sprite::createWithSpriteFrameName("Path.png");
+    bg1->setPosition(Point(sz.width/2, sz.height/2));
+    this->addChild(bg1);
+    
 
+    CCSpriteFrameCache::sharedSpriteFrameCache()->addSpriteFramesWithFile("antiboss1-hd.plist");
     CCSprite *sp =CCSprite::createWithSpriteFrameName("boss_09_normal.png");
     sp->setScale(0.5);
     sp->setPosition(ccp(200,200));
