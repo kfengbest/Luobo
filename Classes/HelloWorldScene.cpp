@@ -72,7 +72,11 @@ bool HelloWorld::init()
     // add the sprite as a child to this layer
     //this->addChild(sprite, 0);
     
-    
+    Sprite *pBackground = Sprite::create("FishRes/bj01.jpg");
+    Size sz = Director::getInstance()->getWinSize();
+    pBackground->setPosition(Point(sz.width/2, sz.height/2));
+    this->addChild(pBackground);
+
     
 
     CCTexture2D::PVRImagesHavePremultipliedAlpha(true);

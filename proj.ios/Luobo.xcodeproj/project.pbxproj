@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		12B08BD817B3E8C300787348 /* FishRes in Resources */ = {isa = PBXBuildFile; fileRef = 12B08BD717B3E8C300787348 /* FishRes */; };
 		12FA502817AF8CDD006E51DA /* antiboss1-hd.plist in Resources */ = {isa = PBXBuildFile; fileRef = 12FA502617AF8CDD006E51DA /* antiboss1-hd.plist */; };
 		12FA502917AF8CDD006E51DA /* antiboss1-hd.pvr.ccz in Resources */ = {isa = PBXBuildFile; fileRef = 12FA502717AF8CDD006E51DA /* antiboss1-hd.pvr.ccz */; };
 		1AC3624916D4A1E8000847F2 /* AppController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1AC3624316D4A1E8000847F2 /* AppController.mm */; };
@@ -178,6 +179,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		12B08BD717B3E8C300787348 /* FishRes */ = {isa = PBXFileReference; lastKnownFileType = folder; path = FishRes; sourceTree = "<group>"; };
 		12FA502617AF8CDD006E51DA /* antiboss1-hd.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "antiboss1-hd.plist"; sourceTree = "<group>"; };
 		12FA502717AF8CDD006E51DA /* antiboss1-hd.pvr.ccz */ = {isa = PBXFileReference; lastKnownFileType = file; path = "antiboss1-hd.pvr.ccz"; sourceTree = "<group>"; };
 		1AC3624216D4A1E8000847F2 /* AppController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppController.h; sourceTree = SOURCE_ROOT; };
@@ -330,6 +332,7 @@
 		78C7DDAA14EBA5050085D0C2 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				12B08BD717B3E8C300787348 /* FishRes */,
 				12FA502617AF8CDD006E51DA /* antiboss1-hd.plist */,
 				12FA502717AF8CDD006E51DA /* antiboss1-hd.pvr.ccz */,
 				1AFAF8B916D35E4900DB1158 /* CloseNormal.png */,
@@ -523,6 +526,7 @@
 				1AFAF8BE16D35E4900DB1158 /* HelloWorld.png in Resources */,
 				12FA502817AF8CDD006E51DA /* antiboss1-hd.plist in Resources */,
 				12FA502917AF8CDD006E51DA /* antiboss1-hd.pvr.ccz in Resources */,
+				12B08BD817B3E8C300787348 /* FishRes in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
