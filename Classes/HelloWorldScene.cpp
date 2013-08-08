@@ -51,51 +51,52 @@ bool HelloWorld::init()
     /////////////////////////////
     // 3. add your codes below...
 
-    // add a label shows "Hello World"
-    // create and initialize a label
-    
-    LabelTTF* label = LabelTTF::create("Hello Luobo", "Arial", 24);
-    
-    // position the label on the center of the screen
-    label->setPosition(Point(origin.x + visibleSize.width/2,
-                            origin.y + visibleSize.height - label->getContentSize().height));
-
-    // add the label as a child to this layer
-    this->addChild(label, 1);
-
     // add "HelloWorld" splash screen"
-    Sprite* sprite = Sprite::create("HelloWorld.png");
-
+    //Sprite* sprite = Sprite::create("HelloWorld.png");
     // position the sprite on the center of the screen
-    sprite->setPosition(Point(visibleSize.width/2 + origin.x, visibleSize.height/2 + origin.y));
-
+    //sprite->setPosition(Point(visibleSize.width/2 + origin.x, visibleSize.height/2 + origin.y));
     // add the sprite as a child to this layer
     //this->addChild(sprite, 0);
     
     
+    Sprite* bgSprite = Sprite::create("Bg.png");
+    this->addChild(bgSprite);
+    CCSize wins = CCDirector::sharedDirector()->getWinSize();
+    bgSprite->setPosition(ccp(wins.width / 2, wins.height / 2));
     
-
+    
     CCTexture2D::PVRImagesHavePremultipliedAlpha(true);
-
     CCSpriteFrameCache::sharedSpriteFrameCache()->addSpriteFramesWithFile("antiboss1-hd.plist");
-
     CCSprite *sp =CCSprite::createWithSpriteFrameName("boss_09_normal.png");
     sp->setScale(0.5);
     sp->setPosition(ccp(200,200));
-
-    CCSprite *sp10 =CCSprite::createWithSpriteFrameName("boss_10_normal.png");
-    sp10->setScale(0.5);
-    sp10->setPosition(ccp(300,200));
-    
-    CCSprite *sp11 =CCSprite::createWithSpriteFrameName("boss_11_normal.png");
-    sp11->setPosition(ccp(400,200));
-    sp11->setScale(0.5);
-    
     this->addChild(sp);
-    this->addChild(sp10);
-    this->addChild(sp11);
     
+    
+    // load the tile map
+    CCTMXTiledMap *pDesertTileMap = CCTMXTiledMap::create("BG1.tmx");
+    this->addChild(pDesertTileMap);
+    
+    this->loadTowerPositions();
     return true;
+}
+
+void HelloWorld::loadTowerPositions()
+{
+    Array* plistDic = Array::createWithContentsOfFile("TowerPosition.plist");
+    towerBases = Array::createWithCapacity(plistDic->count());
+    
+    Object* pObject = NULL;
+    CCARRAY_FOREACH(plistDic, pObject)
+    {
+        Dictionary* towerPos = (Dictionary*)pObject;
+        Sprite* pTower = Sprite::create("open_spot.png");
+        this->addChild(pTower);
+        Point pos(((String*)towerPos->objectForKey("x"))->floatValue(),
+                  ((String*)towerPos->objectForKey("y"))->floatValue());
+        pTower->setPosition(pos);
+        towerBases->addObject(pTower);
+    }
 }
 
 

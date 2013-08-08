@@ -17,6 +17,13 @@ public:
     
     // implement the "static node()" method manually
     CREATE_FUNC(HelloWorld);
+
+private:
+    void loadTowerPositions();
+
+private:
+    cocos2d::Array* towerBases;
+
 };
 
 #endif // __HELLOWORLD_SCENE_H__

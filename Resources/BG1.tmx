@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" width="50" height="50" tilewidth="32" tileheight="32">
+ <tileset firstgid="1" name="tmw_desert_spacing" tilewidth="32" tileheight="32">
+  <image source="tmw_desert_spacing.png" width="265" height="199"/>
+ </tileset>
+ <layer name="floor" width="50" height="50">
+  <data encoding="base64" compression="zlib">
+   eJzt08ENACEIRUEqsAT7L3MbWI+fKJlJvPsI7Kpawddl67iqI9kwqaOrr3uvUk2vzf3EnetImLJXUzqm7FW6o6vtxT//Sd9HV8uUO9ehQwcAAAAAANzpA/+5HU8=
+  </data>
+ </layer>
+ <layer name="wall" width="50" height="50">
+  <data encoding="base64" compression="zlib">
+   eJzt1UELgCAMhmGrk3Wy/v9/bZdgiCjS4PPwPjDQLhs2XUpY0WaxWxyBa4VscVpcgWuFYnFbPIFr6Knvxx++dvX9qOvx30bvka99hfvROsucxu+Rr13ZV1/u1lmWNPceKfsqMreyryJzq/oqOq+qr6Lzqvqqlbf+RzN79RzszbKZvXoO9mbZzF49B9X5AQAAAAAAAAAAorx04QfV
+  </data>
+ </layer>
+ <objectgroup name="hero" width="50" height="50"/>
+</map>
